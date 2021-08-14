@@ -40,7 +40,7 @@ swordGroup=new Group();
 
 }
 
-function draw() {
+function draw(){
 
   if(gameState===PLAY){
   background(0);
@@ -68,25 +68,29 @@ function draw() {
       treasureCollection=treasureCollection+75;
 
       
-    }else if(jwelleryG.isTouching(boy)) {
+    }
+    else if(jwelleryG.isTouching(boy)) {
       jwelleryG.destroyEach();
       treasureCollection=treasureCollection+150;
 
       
-    }else{
-      if(swordGroup.isTouching(boy)) {
-        ganestate = "end";
-
     }
-      else if(gamestate == "end"){
+    
+    else if(swordGroup.isTouching(boy)) {
+        gameState = "end";
+      }
+  }
+     if(gameState == "end"){
      cashG.setLifetimeEach(-1);
-     jwrlleryG.setLifetimeEach(-1);
+     jwelleryG.setLifetimeEach(-1);
      diamondsG.setLifetimeEach(-1);
      swordGroup.setLifetimeEach(-1);
      path.velocityY = 0;
 
     }
-  }
+  
+
+
 
   createCash()
   createDiamonds()
@@ -101,7 +105,7 @@ function draw() {
 
   
 
-}
+
 
 function createCash() {
   if (World.frameCount % 200 == 0) {
