@@ -77,15 +77,20 @@ function draw(){
     }
     
     else if(swordGroup.isTouching(boy)) {
-        gameState = "end";
+        gameState = END;
       }
   }
-     if(gameState == "end"){
+     if(gameState == END){
      cashG.setLifetimeEach(-1);
      jwelleryG.setLifetimeEach(-1);
      diamondsG.setLifetimeEach(-1);
      swordGroup.setLifetimeEach(-1);
-     path.velocityY = 0;
+
+     swordGroup.setVelocityYEach(0);
+     diamondsG.setVelocityYEach(0);
+     jwelleryG.setVelocityYEach(0);
+     cashG.setVelocityYEach(0);
+     path.setVelocityYEach(0);
 
     }
   
